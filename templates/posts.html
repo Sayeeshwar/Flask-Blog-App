@@ -6,4 +6,10 @@
 
 {% block body %}
 <h1>All posts</h1>
+{% for post in posts %}
+    <h2>{{post.title}}</h2>
+    <h3>{{post.content}}}</h3>
+
+{% endfor %}
+
 {% endblock %}
