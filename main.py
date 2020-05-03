@@ -13,6 +13,9 @@ class BlogPost(db.Model):
      author=db.Column(db.String(20),nullable=False,default='Anonymous')
      date_posted=db.Column(db.DateTime,nullable=False,default=datetime.utcnow)
 
+     def __repr__(self):
+         return 'Blog post '+str(self.id)
+
 all_posts=[
     {
         'title':'First Post',
