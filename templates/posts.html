@@ -7,7 +7,7 @@
 {% block body %}
 <h1>All posts</h1>
 <hr>
-<form action="/posts" method="POST">
+<form action="/" method="POST">
     <label for="title">Enter post title</label>
     <input id='title' name='title' placeholder="Add blog post title">
     <br><br>
@@ -25,8 +25,8 @@
     <h4>By: {{post.author}}</h4>
     <h4>At: {{post.date_posted}}</h4>
     <h3>{{post.content}}</h3>
-    <a href="/posts/delete/{{post.id}}">Delete</a>
-    <a href="/posts/edit/{{post.id}}">Edit</a>
+    <a href="/delete/{{post.id}}">Delete</a>
+    <a href="/edit/{{post.id}}">Edit</a>
     <hr>
 
 {% endfor %}

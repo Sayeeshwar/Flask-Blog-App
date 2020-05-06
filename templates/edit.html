@@ -7,7 +7,7 @@
 {% block body %}
 <h1>Edit post</h1>
 <hr>
-<form action="/posts/edit/{{post.id}}" method="POST">
+<form action="/edit/{{post.id}}" method="POST">
     <label for="title">Edit post title</label>
     <input id='title' name='title' placeholder="Add blog post title" value="{{post.title}}">
     <br><br>

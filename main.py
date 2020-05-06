@@ -20,7 +20,7 @@ all_posts=[]
 
 
 
-@app.route('/posts',methods=['GET','POST'])
+@app.route('/',methods=['GET','POST'])
 def posts():
     if request.method=='POST':
         post_title=request.form['title']
@@ -29,20 +29,20 @@ def posts():
         new_post=BlogPost(title=post_title,content=post_content,author=post_author)
         db.session.add(new_post)
         db.session.commit()
-        return redirect('/posts')
+        return redirect('/')
     else:
         all_posts=BlogPost.query.order_by(BlogPost.date_posted)
         return render_template('posts.html',posts=all_posts)
 
-@app.route('/posts/delete/<int:id>')
+@app.route('/delete/<int:id>')
 def delete(id):
     post=BlogPost.query.get_or_404(id)
     db.session.delete(post)
     db.session.commit()
-    return redirect('/posts')
+    return redirect('/')
 
 
-@app.route('/posts/edit/<int:id>',methods=['GET','POST'])
+@app.route('/edit/<int:id>',methods=['GET','POST'])
 def edit(id):
     edit_post=BlogPost.query.get_or_404(id)
     if request.method=='POST':
@@ -50,7 +50,7 @@ def edit(id):
         edit_post.content=request.form['content']
         edit_post.author=request.form['author']
         db.session.commit()
-        return redirect('/posts')
+        return redirect('/')
     else:
         return render_template('edit.html',post=edit_post)
 
