@@ -6,6 +6,20 @@
 
 {% block body %}
 <h1>All posts</h1>
+<hr>
+<form action="/posts">
+    <label for="title">Enter post title</label>
+    <input id='title' placeholder="Add blog post title">
+    <br><br>
+    <label for="content">Enter post content</label>
+    <input id='content' placeholder="Add blog post content">
+    <br><br>
+    <label for="author">Enter Author name</label>
+    <input id='author' placeholder="Author name">
+    <br><br>
+    <input type="submit">
+</form>
+<hr>
 {% for post in posts %}
     <h2>{{post.title}}</h2>
     <h3>{{post.content}}</h3>
