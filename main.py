@@ -16,18 +16,7 @@ class BlogPost(db.Model):
      def __repr__(self):
          return 'Blog post '+str(self.id)
 
-all_posts=[
-    {
-        'title':'First Post',
-        'content':'Hello world!',
-        'author': 'Sai'
-    },
-    {
-        'title':'2nd Post',
-        'content':'Hello Universe!',
-        'author': 'Chandran'
-    }
-]
+all_posts=[]
 
 
 @app.route('/')
