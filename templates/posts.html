@@ -7,17 +7,18 @@
 {% block body %}
 <h1>All posts</h1>
 <hr>
+<h2>NEW POST</h2>
+<br><br>
 <form action="/" method="POST">
-    <label for="title">Enter post title</label>
-    <input id='title' name='title' placeholder="Add blog post title">
+    
+    <input id='title' class="form-control form-control-lg" name='title' placeholder="Add blog post title">
     <br><br>
-    <label for="content">Enter post content</label>
-    <input id='content' name='content' placeholder="Add blog post content">
+    <input id='author' class="form-control form-control-lg" name='author' placeholder="Author name">
     <br><br>
-    <label for="author">Enter Author name</label>
-    <input id='author' name='author' placeholder="Author name">
+
+    <textarea id='content' rows='5' class="form-control form-control-lg" name='content' placeholder="Add blog post content"></textarea>
     <br><br>
-    <input type="submit">
+    <input type="submit" value="Create Post!" class="btn btn-primary">
 </form>
 <hr>
 {% for post in posts %}
