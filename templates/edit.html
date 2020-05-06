@@ -8,16 +8,16 @@
 <h1>Edit post</h1>
 <hr>
 <form action="/edit/{{post.id}}" method="POST">
-    <label for="title">Edit post title</label>
-    <input id='title' name='title' placeholder="Add blog post title" value="{{post.title}}">
+    <label for="title">Edit title</label>
+    <input id='title' class="form-control form-control-lg" name='title'value="{{post.title}}">
+    <br><br>
+    
+    <label for="author">Edit Author name</label>
+    <input id='author' class="form-control form-control-lg"  name='author' value="{{post.author}}">
     <br><br>
     <label for="content">Edit post content</label>
-    <input id='content' name='content' placeholder="Add blog post content" value="{{post.content}}">
+    <input id='content' rows='5' class="form-control form-control-lg"  name='content' value="{{post.content}}">
     <br><br>
-    <label for="author">Edit Author name</label>
-    <input id='author' name='author' placeholder="Author name" value="{{post.author}}">
-    <br><br>
-    <input type="submit">
+    <input type="submit" value="Save changes!" class="btn btn-primary">
 </form>
-
 {% endblock %}
