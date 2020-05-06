@@ -45,11 +45,11 @@ def delete(id):
     return redirect('/posts')
 
 
-@app.route('/posts/edit/<int:id>',methods=['POST','GET'])
+@app.route('/posts/edit/<int:id>',methods=['GET','POST'])
 def edit(id):
     edit_post=BlogPost.query.get_or_404(id)
     if request.method=='POST':
-        edit_post.title=request.form['name']
+        edit_post.title=request.form['title']
         edit_post.content=request.form['content']
         edit_post.author=request.form['author']
         db.session.commit()

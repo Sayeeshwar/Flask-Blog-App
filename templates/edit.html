@@ -7,15 +7,15 @@
 {% block body %}
 <h1>Edit post</h1>
 <hr>
-<form action="/posts/edit/<int id:{{post.id}}" method="POST">
+<form action="/posts/edit/{{post.id}}" method="POST">
     <label for="title">Edit post title</label>
-    <input id='title' name='title' placeholder="Add blog post title">
+    <input id='title' name='title' placeholder="Add blog post title" value="{{post.title}}">
     <br><br>
     <label for="content">Edit post content</label>
-    <input id='content' name='content' placeholder="Add blog post content">
+    <input id='content' name='content' placeholder="Add blog post content" value="{{post.content}}">
     <br><br>
     <label for="author">Edit Author name</label>
-    <input id='author' name='author' placeholder="Author name">
+    <input id='author' name='author' placeholder="Author name" value="{{post.author}}">
     <br><br>
     <input type="submit">
 </form>
