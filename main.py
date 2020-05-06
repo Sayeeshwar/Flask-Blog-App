@@ -44,5 +44,12 @@ def delete(id):
     db.session.commit()
     return redirect('/posts')
 
+
+@app.route('/posts/edit/<int:id>')
+def edit(id):
+    post=BlogPost.query.get_or_404(id)
+
+    return redirect('/posts')
+
 if __name__=="__main__":
     app.run(debug=True)
