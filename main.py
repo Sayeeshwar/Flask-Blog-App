@@ -19,9 +19,6 @@ class BlogPost(db.Model):
 all_posts=[]
 
 
-@app.route('/')
-def hello():
-    return render_template('index.html')
 
 @app.route('/posts',methods=['GET','POST'])
 def posts():
