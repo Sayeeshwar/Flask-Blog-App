@@ -45,11 +45,17 @@ def delete(id):
     return redirect('/posts')
 
 
-@app.route('/posts/edit/<int:id>')
+@app.route('/posts/edit/<int:id>',methods=['POST','GET'])
 def edit(id):
-    post=BlogPost.query.get_or_404(id)
-
-    return redirect('/posts')
+    edit_post=BlogPost.query.get_or_404(id)
+    if request.method=='POST':
+        edit_post.title=request.form['name']
+        edit_post.content=request.form['content']
+        edit_post.author=request.form['author']
+        db.session.commit()
+        return redirect('/posts')
+    else:
+        return render_template('edit.html',post=edit_post)
 
 if __name__=="__main__":
     app.run(debug=True)
