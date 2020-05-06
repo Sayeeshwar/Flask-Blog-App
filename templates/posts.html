@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
-
-{% block head %}
-<title>Home</title>
-{% endblock %}
+<head>
+    
+    {% block head %}
+    <title>Home</title>
+    {% endblock %}
+</head>
 
 {% block body %}
 <h1>Chennai Chronicles</h1>
@@ -31,21 +33,25 @@
 <hr>
 <h1>All posts</h1>
 <hr>
-{% for post in posts %}
-    <div class="card" style="width: 100%;">
-        <h5 class="card-header">{{post.title}}</h5>
-        <div class="card-body">
-            <h6 class="card-subtitle mb-2">By : {{post.author}}</h6>
-            <h8 class="card-subtitle mb-2 text-muted">At: {{post.date_posted}}</h8>
-            <br><br>
-            <p class="card-text">{{post.content}}</p>
-            <a href="/delete/{{post.id}}" class="card-link">Delete</a>
-            <a href="/edit/{{post.id}}" class="card-link">Edit</a>
-        </div>
-  </div>
+<div class="b" style="height: 60vh;">
+    <div class="cardList" style="height: 60vh;overflow: auto;">
+        {% for post in posts %}
+            <div class="card" style="width: 100%;">
+                <h5 class="card-header">{{post.title}}</h5>
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2">By : {{post.author}}</h6>
+                    <h8 class="card-subtitle mb-2 text-muted">At: {{post.date_posted}}</h8>
+                    <br><br>
+                    <p class="card-text">{{post.content}}</p>
+                    <a href="/delete/{{post.id}}" class="card-link">Delete</a>
+                    <a href="/edit/{{post.id}}" class="card-link">Edit</a>
+                </div>
+            </div>
+            <hr>
 
-    <hr>
+        {% endfor %}
+    </div>
+</div>
 
-{% endfor %}
 
 {% endblock %}
