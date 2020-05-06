@@ -7,19 +7,27 @@
 {% block body %}
 <h1>Chennai Chronicles</h1>
 <hr>
-<h2>NEW POST</h2>
-<br><br>
-<form action="/" method="POST">
-    
-    <input id='title' class="form-control form-control-lg" name='title' placeholder="Add blog post title">
-    <br><br>
-    <input id='author' class="form-control form-control-lg" name='author' placeholder="Author name">
-    <br><br>
 
-    <textarea id='content' rows='5' class="form-control form-control-lg" name='content' placeholder="Add blog post content"></textarea>
-    <br><br>
-    <input type="submit" value="Create Post!" class="btn btn-primary">
-</form>
+<br>
+
+<a class="btn btn-primary" data-toggle="collapse" href="#newPost" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <h2>NEW POST +</h2>
+</a>
+
+<div class="collapse" id="newPost">
+    <form action="/" method="POST">
+        <br><br>
+        <input id='title' class="form-control form-control-lg" name='title' placeholder="Add blog post title">
+        <br><br>
+        <input id='author' class="form-control form-control-lg" name='author' placeholder="Author name">
+        <br><br>
+    
+        <textarea id='content' rows='5' class="form-control form-control-lg" name='content' placeholder="Add blog post content"></textarea>
+        <br><br>
+        <input type="submit" value="Create Post!" class="btn btn-primary">
+    </form>
+</div>
+
 <hr>
 <h1>All posts</h1>
 <hr>
